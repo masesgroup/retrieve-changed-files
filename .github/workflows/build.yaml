@@ -25,8 +25,20 @@ jobs:
         with:
           node-version: 24.x
           cache: npm
-      - run: npm install
       - run: npm ci
       - run: npm run build
-#      - run: npm run format-check  ---   bypass check because seems there is incompatiility between GitHub env and local windows env
+      - run: npm run format-check
       - run: npm test
+      - name: Create Pull Request
+        if: >
+          matrix.os == 'ubuntu-latest' &&
+          (github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/heads/releases/'))
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: update dist"
+          branch: update-dist-${{ github.ref_name }}
+          title: "chore: update dist"
+          body: "Automated update of dist/ after build"
+          base: ${{ github.ref_name }}
+          add-paths: dist/
