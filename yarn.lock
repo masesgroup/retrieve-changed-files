@@ -6,12 +6,18 @@
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/@aashutoshrathi/word-wrap/-/word-wrap-1.2.6.tgz#bd9154aec9983f77b3a034ecaa015c2e4201f6cf"
 
-"@actions/core@^1.10.1":
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/@actions/core/-/core-1.10.1.tgz#61108e7ac40acae95ee36da074fa5850ca4ced8a"
+"@actions/core@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@actions/core/-/core-3.0.0.tgz#89cb07c119e9b46a649ad5f355e77de9b3108cf8"
   dependencies:
-    "@actions/http-client" "^2.0.1"
-    uuid "^8.3.2"
+    "@actions/exec" "^3.0.0"
+    "@actions/http-client" "^4.0.0"
+
+"@actions/exec@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@actions/exec/-/exec-3.0.0.tgz#8c3464d20f0aa4068707757021d7e3c01a7ee203"
+  dependencies:
+    "@actions/io" "^3.0.2"
 
 "@actions/github@^6.0.0":
   version "6.0.0"
@@ -22,12 +28,23 @@
     "@octokit/plugin-paginate-rest" "^9.0.0"
     "@octokit/plugin-rest-endpoint-methods" "^10.0.0"
 
-"@actions/http-client@^2.0.1", "@actions/http-client@^2.2.0":
+"@actions/http-client@^2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@actions/http-client/-/http-client-2.2.0.tgz#f8239f375be6185fcd07765efdcf0031ad5df1a0"
   dependencies:
     tunnel "^0.0.6"
     undici "^5.25.4"
+
+"@actions/http-client@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@actions/http-client/-/http-client-4.0.0.tgz#f9754133c22802466482bf96321d42f2dba1fc82"
+  dependencies:
+    tunnel "^0.0.6"
+    undici "^6.23.0"
+
+"@actions/io@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@actions/io/-/io-3.0.2.tgz#6f89b27a159d109836d983efa283997c23b92284"
 
 "@ampproject/remapping@^2.1.0":
   version "2.2.0"
@@ -4053,9 +4070,9 @@ typed-array-length@^1.0.4:
     for-each "^0.3.3"
     is-typed-array "^1.1.9"
 
-typescript@^5.2.2:
-  version "5.2.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.2.2.tgz#5ebb5e5a5b75f085f22bc3f8460fba308310fa78"
+typescript@^5.9.3:
+  version "5.9.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.3.tgz#5b4f59e15310ab17a216f5d6cf53ee476ede670f"
 
 unbox-primitive@^1.0.2:
   version "1.0.2"
@@ -4075,6 +4092,10 @@ undici@^5.25.4:
   resolved "https://registry.yarnpkg.com/undici/-/undici-5.27.0.tgz#789f2e40ce982b5507899abc2c2ddeb2712b4554"
   dependencies:
     "@fastify/busboy" "^2.0.0"
+
+undici@^6.23.0:
+  version "6.24.0"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-6.24.0.tgz#ad36b879b4882d14addc13dd641da7ed7ac7623a"
 
 universal-user-agent@^6.0.0:
   version "6.0.0"
@@ -4096,10 +4117,6 @@ uri-js@^4.2.2:
   resolved "https://registry.npmjs.org/uri-js/-/uri-js-4.2.2.tgz"
   dependencies:
     punycode "^2.1.0"
-
-uuid@^8.3.2:
-  version "8.3.2"
-  resolved "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz"
 
 v8-to-istanbul@^9.0.1:
   version "9.0.1"
