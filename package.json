@@ -1,7 +1,7 @@
 {
   "name": "retrieve-changed-files",
   "description": "GitHub action that retrieves all changed files in a pull request or push.",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "private": true,
   "author": "MASES s.r.l. (original author Jitterbit, Inc.)",
   "license": "MIT",
@@ -24,17 +24,17 @@
     "Diff",
     "Files"
   ],
-  "main": "lib/main.js",
+  "main": "lib/index.js",
   "engines": {
-    "node": ">=20.*.*"
+    "node": ">=24.*.*"
   },
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist/**/* lib/**/*",
-    "format": "prettier --write **/*.ts",
-	"format-check": "prettier --check \"{,!(node_modules)/**/}*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\"",
+	  "format-check": "prettier --check \"src/**/*.ts\"",
     "lint": "eslint src/**/*.ts",
-    "package": "ncc build",
+    "package": "ncc build src/main.ts -o dist",
     "test": "jest",
     "all": "yarn clean && yarn build && yarn format && yarn lint && yarn package && yarn test"
   },
