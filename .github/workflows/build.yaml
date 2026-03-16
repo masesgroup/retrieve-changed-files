@@ -33,7 +33,7 @@ jobs:
         if: >
           matrix.os == 'ubuntu-latest' &&
           (github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/heads/releases/'))
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore: update dist"
