@@ -3,7 +3,7 @@ name: Build Action
 on:
   push:
     branches:
-      - main
+      - master
       - releases/*
     paths-ignore:
       - '**.md'
